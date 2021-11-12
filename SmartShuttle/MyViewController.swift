@@ -12,22 +12,6 @@ class MyViewController: UIViewController {
     @IBOutlet var myview: UIView!
     
     
-    override func loadView() {
-//        view.addSubview(myview)
-        
-        let mystoryboard = UIStoryboard(name: "ChoseShuttle", bundle: nil)
-        let vc = mystoryboard.instantiateViewController(withIdentifier: "myVCID")
-        if let sheet = vc.sheetPresentationController {
-            sheet.detents = [.medium(), .large()]
-            sheet.prefersGrabberVisible = true
-            sheet.largestUndimmedDetentIdentifier = .large
-            sheet.prefersEdgeAttachedInCompactHeight = true
-        }
-        
-//        present(self, animated: true)
-        
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

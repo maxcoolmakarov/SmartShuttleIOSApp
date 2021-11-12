@@ -66,12 +66,12 @@
 				BB913CF5273E8E1F004F22A7 /* ChoseShuttle.storyboard */,
 				BB913CD3273D2D97004F22A7 /* SceneDelegate.swift */,
 				BB913CD5273D2D97004F22A7 /* ViewController.swift */,
+				BB913CF3273E836E004F22A7 /* MyViewController.swift */,
 				BB913CD7273D2D97004F22A7 /* Main.storyboard */,
 				BB913CDA273D2D99004F22A7 /* Assets.xcassets */,
 				BB913CDC273D2D99004F22A7 /* LaunchScreen.storyboard */,
 				BB913CDF273D2D99004F22A7 /* Info.plist */,
 				BB913CE9273DA51D004F22A7 /* WebController.swift */,
-				BB913CF3273E836E004F22A7 /* MyViewController.swift */,
 			);
 			path = SmartShuttle;
 			sourceTree = "<group>";

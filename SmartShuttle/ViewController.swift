@@ -13,14 +13,10 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        //checkLocationServises(mapView)
-//        self.navigationController?.addChild(MyViewController())
-//        navigationController?.pushViewController(MyViewController(), animated:  true)
-//        showMyViewPresentComtr()
-//        present(vc, animated: true)
-        present(vc, animated: true)
         
+        // Do any additional setup after loading the view.
+        checkLocationServises(mapView)
+        showMyViewPresentComtr()
     }
     
     func showMyViewPresentComtr() {
@@ -35,17 +31,11 @@ class ViewController: UIViewController {
         present(vc, animated: true)
         
     }
-
-
     
     @IBOutlet weak var mapView: MKMapView!
     
     let clocationmanager = CLLocationManager()
     
-//    let vc = MyViewController()
-    let vc = WebController()
-    
-         
     
     func checkLocationServises(_ mapView: MKMapView) {
         if CLLocationManager.locationServicesEnabled() {
