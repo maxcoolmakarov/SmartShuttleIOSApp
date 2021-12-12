@@ -57,7 +57,6 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Fkp-8O-oMA" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="5" id="1HN-Zw-ohw"/>
                             <constraint firstItem="Fkp-8O-oMA" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="Gv7-MB-b2z"/>
                             <constraint firstItem="Txd-uS-Ct2" firstAttribute="top" secondItem="dhw-Jf-acv" secondAttribute="bottom" constant="20" id="Ia1-yR-jvC"/>
                             <constraint firstItem="Fkp-8O-oMA" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="JBM-Hu-7YV"/>
