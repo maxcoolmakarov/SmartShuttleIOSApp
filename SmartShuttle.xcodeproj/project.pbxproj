@@ -16,6 +16,7 @@
 		BB913CEA273DA51D004F22A7 /* WebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB913CE9273DA51D004F22A7 /* WebController.swift */; };
 		BB913CF4273E836E004F22A7 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB913CF3273E836E004F22A7 /* MyViewController.swift */; };
 		BB913CF6273E8E1F004F22A7 /* ChoseShuttle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB913CF5273E8E1F004F22A7 /* ChoseShuttle.storyboard */; };
+		BB939EAD27663DFB004E3893 /* Shuttle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB939EAC27663DFB004E3893 /* Shuttle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		BB913CE9273DA51D004F22A7 /* WebController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebController.swift; sourceTree = "<group>"; };
 		BB913CF3273E836E004F22A7 /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		BB913CF5273E8E1F004F22A7 /* ChoseShuttle.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ChoseShuttle.storyboard; path = SmartShuttle/ChoseShuttle.storyboard; sourceTree = SOURCE_ROOT; };
+		BB939EAC27663DFB004E3893 /* Shuttle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shuttle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		BB913CD0273D2D97004F22A7 /* SmartShuttle */ = {
 			isa = PBXGroup;
 			children = (
+				BB939EAB27663DBF004E3893 /* Model */,
 				BB913CD1273D2D97004F22A7 /* AppDelegate.swift */,
 				BB913CF5273E8E1F004F22A7 /* ChoseShuttle.storyboard */,
 				BB913CD3273D2D97004F22A7 /* SceneDelegate.swift */,
@@ -74,6 +77,14 @@
 				BB913CE9273DA51D004F22A7 /* WebController.swift */,
 			);
 			path = SmartShuttle;
+			sourceTree = "<group>";
+		};
+		BB939EAB27663DBF004E3893 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BB939EAC27663DFB004E3893 /* Shuttle.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,6 +164,7 @@
 				BB913CD2273D2D97004F22A7 /* AppDelegate.swift in Sources */,
 				BB913CF4273E836E004F22A7 /* MyViewController.swift in Sources */,
 				BB913CD4273D2D97004F22A7 /* SceneDelegate.swift in Sources */,
+				BB939EAD27663DFB004E3893 /* Shuttle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,8 +12,10 @@ class MyViewController: UIViewController {
     @IBOutlet var myview: UIView!
     
     
+    @IBOutlet weak var ChargeBar: UIProgressView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        ChargeBar.transform = ChargeBar.transform.scaledBy(x: 1, y: 3)
     }
     
 
