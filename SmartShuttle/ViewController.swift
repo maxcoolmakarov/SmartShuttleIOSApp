@@ -10,6 +10,8 @@ import MapKit
 import WebKit
 
 class ViewController: UIViewController {
+    
+    let shuttlecontroller = MyViewController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,7 +19,8 @@ class ViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         checkLocationServises(mapView)
-        showMyViewPresentComtr()
+//        present(showMyViewPresentComtr(), animated: true)
+//        showMyViewPresentComtr()
 //        mapView.addAnnotation(ShuttleData.carArray[0])
         print(ShuttleData.carArray[0].title)
         
@@ -30,17 +33,20 @@ class ViewController: UIViewController {
     }
     
     func showMyViewPresentComtr() {
-        let mystoryboard = UIStoryboard(name: "ChoseShuttle", bundle: nil)
-        let vc = mystoryboard.instantiateViewController(withIdentifier: "myVCID")
-        if let sheet = vc.sheetPresentationController {
+        print("delegare self", shuttlecontroller)
+        present(shuttlecontroller, animated: true)
+        if let sheet = shuttlecontroller.sheetPresentationController {
             sheet.detents = [.medium(), .large()]
             sheet.prefersGrabberVisible = true
             sheet.largestUndimmedDetentIdentifier = .large
             sheet.prefersEdgeAttachedInCompactHeight = true
+            print("delegare self", shuttlecontroller)
+//            sheet.delegate = shuttlecontroller
+            
         }
-        present(vc, animated: true)
-        
+       
     }
+
     
     @IBOutlet weak var mapView: MKMapView!
     
@@ -105,7 +111,8 @@ extension ViewController: MKMapViewDelegate, CLLocationManagerDelegate {
                 let artwork = view.annotation as? Shuttle
                 print(artwork?.id)
                 print("blalala")
-                showMyViewPresentComtr()
+//                showMyViewPresentComtr()
+                present(shuttlecontroller.showMyViewPresentComtr(), animated: true)
             }
         }
 }

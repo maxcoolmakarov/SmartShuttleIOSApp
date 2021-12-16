@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -53,6 +53,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YM7-rX-U6A">
+                                <rect key="frame" x="20" y="254" width="374" height="447"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="center" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="This suttle model is " borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bsN-Q4-Ust">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="text:" destination="Y6W-OH-hqX" eventType="editingDidEnd" id="wiS-uy-u95"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="bsN-Q4-Ust" firstAttribute="leading" secondItem="YM7-rX-U6A" secondAttribute="leading" id="1Li-5x-cSG"/>
+                                    <constraint firstAttribute="trailing" secondItem="bsN-Q4-Ust" secondAttribute="trailing" id="97k-50-e1n"/>
+                                    <constraint firstItem="bsN-Q4-Ust" firstAttribute="top" secondItem="YM7-rX-U6A" secondAttribute="top" id="BhN-7b-NGc"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -61,20 +80,27 @@
                             <constraint firstItem="Txd-uS-Ct2" firstAttribute="top" secondItem="dhw-Jf-acv" secondAttribute="bottom" constant="20" id="Ia1-yR-jvC"/>
                             <constraint firstItem="Fkp-8O-oMA" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="JBM-Hu-7YV"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ZeY-Qf-qRQ" secondAttribute="trailing" id="OoN-eC-n10"/>
+                            <constraint firstItem="dhw-Jf-acv" firstAttribute="top" secondItem="YM7-rX-U6A" secondAttribute="bottom" constant="8" symbolic="YES" id="P5X-h0-eUb"/>
                             <constraint firstItem="ZeY-Qf-qRQ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Te2-mH-res"/>
                             <constraint firstItem="ZeY-Qf-qRQ" firstAttribute="top" secondItem="Txd-uS-Ct2" secondAttribute="bottom" constant="20" id="XtP-oh-Erx"/>
                             <constraint firstItem="Txd-uS-Ct2" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="b4v-hi-sZL"/>
                             <constraint firstItem="ZeY-Qf-qRQ" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="bI8-Pq-WD7"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Fkp-8O-oMA" secondAttribute="trailing" constant="30" id="dM1-cq-tiM"/>
                             <constraint firstItem="Txd-uS-Ct2" firstAttribute="top" secondItem="X2M-UT-ls8" secondAttribute="bottom" constant="20" id="eds-DF-LYd"/>
+                            <constraint firstItem="YM7-rX-U6A" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="nhC-of-Dh1"/>
                             <constraint firstItem="X2M-UT-ls8" firstAttribute="leading" secondItem="dhw-Jf-acv" secondAttribute="trailing" constant="20" id="qUF-cq-cLp"/>
                             <constraint firstItem="dhw-Jf-acv" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="vtY-Gb-U9v"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="YM7-rX-U6A" secondAttribute="trailing" constant="20" id="wlv-nT-WVj"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Txd-uS-Ct2" secondAttribute="trailing" constant="20" id="zRU-o9-hGM"/>
+                            <constraint firstItem="YM7-rX-U6A" firstAttribute="top" secondItem="Fkp-8O-oMA" secondAttribute="bottom" constant="30" id="zx9-jx-Wdv"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="ChargeBar" destination="Txd-uS-Ct2" id="rcS-wd-hUe"/>
+                        <outlet property="ModelDetails" destination="YM7-rX-U6A" id="yGt-ae-JkE"/>
                         <outlet property="myview" destination="5EZ-qb-Rvc" id="rzT-V4-DNH"/>
+                        <outlet property="picture" destination="Fkp-8O-oMA" id="A1U-J1-bRQ"/>
+                        <outlet property="text" destination="bsN-Q4-Ust" id="bRB-Of-EUK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
