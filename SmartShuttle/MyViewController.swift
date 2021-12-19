@@ -15,8 +15,14 @@ class MyViewController: UIViewController, UISheetPresentationControllerDelegate 
     @IBOutlet weak var modelDetails: UIView!
     @IBOutlet weak var picture: UIImageView!
     @IBOutlet var shuttleDescription: UITextView!
+    
     var opened = false
     var pic =  UIImage(named: "SShuttle")
+    
+    let mainBoard = UIStoryboard(name: "Main", bundle: nil)
+//    var mainVC = ViewController()
+//    var surveyVC = SurveyViewController()
+    
     @IBOutlet var price: UILabel!
     
     override func viewDidLoad() {
@@ -27,6 +33,11 @@ class MyViewController: UIViewController, UISheetPresentationControllerDelegate 
         opened = true
         picture.image = pic
         modelDetails.isHidden = true
+        
+//        let mainBoard = UIStoryboard(name: "Main", bundle: nil)
+//        mainVC = mainBoard.instantiateViewController(identifier: "mainID") as! ViewController
+//        surveyVC = mainBoard.instantiateViewController(identifier: "surveyID") as! SurveyViewController
+        
         print("Did load")
     }
     
@@ -52,6 +63,14 @@ class MyViewController: UIViewController, UISheetPresentationControllerDelegate 
         }
     }
     
+    @IBAction func rentMe(_ sender: Any) {
+        print("rent me")
+        let mainBoard = UIStoryboard(name: "Main", bundle: nil)
+        let surveyVC = mainBoard.instantiateViewController(identifier: "surveyID") as! SurveyViewController
+        
+        self.dismiss(animated: true, completion: nil)
+        presentingViewController?.show(surveyVC, sender: nil)
+    }
     
     func sheetPresentationControllerDidChangeSelectedDetentIdentifier(_ sheetPresentationController: UISheetPresentationController){
 

@@ -78,7 +78,7 @@ extension ViewController: MKMapViewDelegate, CLLocationManagerDelegate {
         let Identifier = "annotation"
         let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: Identifier) ??  MKPinAnnotationView(annotation: annotation, reuseIdentifier: Identifier)
 
-        annotationView.canShowCallout = true
+        annotationView.canShowCallout = false
         if annotation is MKUserLocation {
             return nil
         } else if annotation is Shuttle {
@@ -101,6 +101,7 @@ extension ViewController: MKMapViewDelegate, CLLocationManagerDelegate {
                 } else {
                     shuttleVC.setData(selectedShuttle)
                 }
+                mapView.deselectAnnotation(view.annotation, animated: false)
             }
         }
 }

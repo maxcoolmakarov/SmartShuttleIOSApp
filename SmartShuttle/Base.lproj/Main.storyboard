@@ -30,7 +30,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SmartShuttle" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="SmartShuttle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -52,10 +52,75 @@
             </objects>
             <point key="canvasLocation" x="18.840579710144929" y="97.767857142857139"/>
         </scene>
+        <!--Survey View Controller-->
+        <scene sceneID="jTi-iX-iAU">
+            <objects>
+                <viewController storyboardIdentifier="surveyID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Zql-MY-rSe" customClass="SurveyViewController" customModule="SmartShuttle" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gfL-qa-TYC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time in trip:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6c8-2c-aNO">
+                                <rect key="frame" x="10" y="436" width="394" height="24"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qTU-xz-Q1T">
+                                <rect key="frame" x="100" y="471" width="214" height="121"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="121" id="aIh-Tj-RHQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SinhalaSangamMN-Bold" family="Sinhala Sangam MN" pointSize="90"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cDM-Vx-UK0">
+                                <rect key="frame" x="0.0" y="782" width="414" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="O97-SM-thm"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Stop the trip">
+                                    <fontDescription key="titleFontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="40"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" systemColor="systemPinkColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="stopTrip:" destination="Zql-MY-rSe" eventType="touchUpInside" id="ca8-OW-fc8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gTF-nT-6t3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gTF-nT-6t3" firstAttribute="trailing" secondItem="qTU-xz-Q1T" secondAttribute="trailing" constant="100" id="3Vj-Im-UPQ"/>
+                            <constraint firstItem="gTF-nT-6t3" firstAttribute="bottom" secondItem="qTU-xz-Q1T" secondAttribute="bottom" constant="270" id="66L-yU-rI3"/>
+                            <constraint firstItem="gTF-nT-6t3" firstAttribute="trailing" secondItem="cDM-Vx-UK0" secondAttribute="trailing" id="DAC-Tu-YCe"/>
+                            <constraint firstItem="qTU-xz-Q1T" firstAttribute="leading" secondItem="gTF-nT-6t3" secondAttribute="leading" constant="100" id="J70-pr-8gE"/>
+                            <constraint firstItem="6c8-2c-aNO" firstAttribute="leading" secondItem="gTF-nT-6t3" secondAttribute="leading" constant="10" id="Lrt-tv-sOe"/>
+                            <constraint firstItem="cDM-Vx-UK0" firstAttribute="leading" secondItem="gTF-nT-6t3" secondAttribute="leading" id="NiU-Gf-jgN"/>
+                            <constraint firstItem="gTF-nT-6t3" firstAttribute="trailing" secondItem="6c8-2c-aNO" secondAttribute="trailing" constant="10" id="VZc-N7-dpW"/>
+                            <constraint firstItem="cDM-Vx-UK0" firstAttribute="bottom" secondItem="gTF-nT-6t3" secondAttribute="bottom" id="deA-96-B1H"/>
+                            <constraint firstItem="qTU-xz-Q1T" firstAttribute="top" secondItem="6c8-2c-aNO" secondAttribute="bottom" constant="11" id="rbt-sd-7zc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Mqb-Zf-Cyi"/>
+                    <connections>
+                        <outlet property="timerLabel" destination="qTU-xz-Q1T" id="GX5-LG-7vj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pZw-17-P5z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="787" y="108"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
