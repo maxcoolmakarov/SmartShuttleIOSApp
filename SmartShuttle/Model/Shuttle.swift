@@ -11,11 +11,11 @@ import MapKit
 class Shuttle: NSObject, MKAnnotation {
     let id: Int
     let title: String?
-    let charge: Int
+    let charge: Float
     let price: Double
     let coordinate: CLLocationCoordinate2D
     
-    init(id: Int, title: String, charge: Int, price: Double, coordinate: CLLocationCoordinate2D) {
+    init(id: Int, title: String, charge: Float, price: Double, coordinate: CLLocationCoordinate2D) {
         self.coordinate = coordinate
         self.charge = charge
         self.price = price
@@ -37,30 +37,4 @@ struct ShuttleData {
                                       .init(id: 3, title: "Busik", charge: 69, price: 201.6, coordinate: CLLocationCoordinate2D(latitude: 37.783834, longitude: -122.406017))
     ]
     
-}
-
-
-class Artwork: NSObject, MKAnnotation {
-  let title: String?
-  let locationName: String?
-  let discipline: String?
-  let coordinate: CLLocationCoordinate2D
-
-  init(
-    title: String?,
-    locationName: String?,
-    discipline: String?,
-    coordinate: CLLocationCoordinate2D
-  ) {
-    self.title = title
-    self.locationName = locationName
-    self.discipline = discipline
-    self.coordinate = coordinate
-
-    super.init()
-  }
-
-  var subtitle: String? {
-    return locationName
-  }
 }

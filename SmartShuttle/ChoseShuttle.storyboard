@@ -56,20 +56,20 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YM7-rX-U6A">
                                 <rect key="frame" x="20" y="254" width="374" height="447"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="center" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="This suttle model is " borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bsN-Q4-Ust">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
-                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <action selector="text:" destination="Y6W-OH-hqX" eventType="editingDidEnd" id="wiS-uy-u95"/>
-                                        </connections>
-                                    </textField>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5uw-uG-sI3">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="447"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" name="NotoNastaliqUrdu-Bold" family="Noto Nastaliq Urdu" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="bsN-Q4-Ust" firstAttribute="leading" secondItem="YM7-rX-U6A" secondAttribute="leading" id="1Li-5x-cSG"/>
-                                    <constraint firstAttribute="trailing" secondItem="bsN-Q4-Ust" secondAttribute="trailing" id="97k-50-e1n"/>
-                                    <constraint firstItem="bsN-Q4-Ust" firstAttribute="top" secondItem="YM7-rX-U6A" secondAttribute="top" id="BhN-7b-NGc"/>
+                                    <constraint firstItem="5uw-uG-sI3" firstAttribute="top" secondItem="YM7-rX-U6A" secondAttribute="top" id="DgM-hx-hm4"/>
+                                    <constraint firstAttribute="trailing" secondItem="5uw-uG-sI3" secondAttribute="trailing" id="T11-8F-U1K"/>
+                                    <constraint firstAttribute="bottom" secondItem="5uw-uG-sI3" secondAttribute="bottom" id="akm-SL-LxC"/>
+                                    <constraint firstItem="5uw-uG-sI3" firstAttribute="leading" secondItem="YM7-rX-U6A" secondAttribute="leading" id="vcL-QP-vfF"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -97,10 +97,11 @@
                     </view>
                     <connections>
                         <outlet property="ChargeBar" destination="Txd-uS-Ct2" id="rcS-wd-hUe"/>
-                        <outlet property="ModelDetails" destination="YM7-rX-U6A" id="yGt-ae-JkE"/>
+                        <outlet property="modelDetails" destination="YM7-rX-U6A" id="iRg-Tk-DfH"/>
                         <outlet property="myview" destination="5EZ-qb-Rvc" id="rzT-V4-DNH"/>
-                        <outlet property="picture" destination="Fkp-8O-oMA" id="A1U-J1-bRQ"/>
-                        <outlet property="text" destination="bsN-Q4-Ust" id="bRB-Of-EUK"/>
+                        <outlet property="picture" destination="Fkp-8O-oMA" id="q4Y-qQ-hp7"/>
+                        <outlet property="price" destination="X2M-UT-ls8" id="HJS-CH-Pl6"/>
+                        <outlet property="shuttleDescription" destination="5uw-uG-sI3" id="wan-8V-Yar"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -110,6 +111,9 @@
     </scenes>
     <resources>
         <image name="SShuttle" width="700" height="550"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -11,40 +11,15 @@ import WebKit
 
 class ViewController: UIViewController {
     
-    let shuttlecontroller = MyViewController()
-
+    
+    let shuttleBoard = UIStoryboard(name: "ChoseShuttle", bundle: nil)
+    var shuttleVC = MyViewController()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
-        
-        // Do any additional setup after loading the view.
         checkLocationServises(mapView)
-//        present(showMyViewPresentComtr(), animated: true)
-//        showMyViewPresentComtr()
-//        mapView.addAnnotation(ShuttleData.carArray[0])
-        print(ShuttleData.carArray[0].title)
-        
-        let artwork = Artwork(
-          title: "King David Kalakaua",
-          locationName: "Waikiki Gateway Park",
-          discipline: "Sculpture",
-          coordinate: CLLocationCoordinate2D(latitude: 37.786834, longitude: -122.405517))
-//        mapView.addAnnotation(artwork)
-    }
-    
-    func showMyViewPresentComtr() {
-        print("delegare self", shuttlecontroller)
-        present(shuttlecontroller, animated: true)
-        if let sheet = shuttlecontroller.sheetPresentationController {
-            sheet.detents = [.medium(), .large()]
-            sheet.prefersGrabberVisible = true
-            sheet.largestUndimmedDetentIdentifier = .large
-            sheet.prefersEdgeAttachedInCompactHeight = true
-            print("delegare self", shuttlecontroller)
-//            sheet.delegate = shuttlecontroller
-            
-        }
-       
     }
 
     
@@ -52,17 +27,27 @@ class ViewController: UIViewController {
     
     let clocationmanager = CLLocationManager()
     
-    
+    func sheetPrepare() {
+        shuttleVC = shuttleBoard.instantiateViewController(identifier: "myVCID") as! MyViewController
+        if let sheet = shuttleVC.sheetPresentationController {
+            sheet.detents = [.medium(), .large()]
+            sheet.prefersGrabberVisible = true
+            sheet.largestUndimmedDetentIdentifier = .large
+            sheet.prefersEdgeAttachedInCompactHeight = true
+            print("delegare self", self)
+            sheet.delegate = shuttleVC
+        }
+    }
+
+
     func checkLocationServises(_ mapView: MKMapView) {
         if CLLocationManager.locationServicesEnabled() {
             checkLocationAuth(mapView)
-//            clocationmanager.delegate = self
             clocationmanager.desiredAccuracy = kCLLocationAccuracyBest
             clocationmanager.distanceFilter = kCLHeadingFilterNone
             clocationmanager.startUpdatingLocation()
             let location = clocationmanager.location?.coordinate
             mapView.addAnnotations(ShuttleData.carArray)
-//            mapView.interactions =
             let viewRegion = MKCoordinateRegion(center: location!, latitudinalMeters: 300, longitudinalMeters: 300)
             mapView.setRegion(viewRegion, animated: true)
         }
@@ -108,11 +93,14 @@ extension ViewController: MKMapViewDelegate, CLLocationManagerDelegate {
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView)
         {
             if view.annotation is Shuttle {
-                let artwork = view.annotation as? Shuttle
-                print(artwork?.id)
-                print("blalala")
-//                showMyViewPresentComtr()
-                present(shuttlecontroller.showMyViewPresentComtr(), animated: true)
+                let selectedShuttle = view.annotation as! Shuttle
+                if !shuttleVC.opened {
+                    sheetPrepare()
+                    present(shuttleVC, animated: true)
+                    shuttleVC.setData(selectedShuttle)
+                } else {
+                    shuttleVC.setData(selectedShuttle)
+                }
             }
         }
 }
