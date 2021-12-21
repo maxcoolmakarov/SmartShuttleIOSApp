@@ -76,10 +76,10 @@
                                     <constraint firstItem="5uw-uG-sI3" firstAttribute="leading" secondItem="YM7-rX-U6A" secondAttribute="leading" id="vcL-QP-vfF"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rub" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FVX-od-rwK">
-                                <rect key="frame" x="160.5" y="709" width="44" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rub/h" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FVX-od-rwK">
+                                <rect key="frame" x="160.5" y="709" width="70" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="44" id="Xmm-Pl-T3d"/>
+                                    <constraint firstAttribute="width" constant="70" id="Xmm-Pl-T3d"/>
                                     <constraint firstAttribute="height" constant="30" id="xSb-bR-6CX"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="25"/>
