@@ -35,13 +35,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" showsBuildings="NO" showsCompass="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jvd-jY-L4g">
-                                <rect key="frame" x="0.0" y="61" width="414" height="774"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" showsBuildings="NO" showsCompass="NO" showsPointsOfInterest="NO" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jvd-jY-L4g">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                             </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Jvd-jY-L4g" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="8OX-z9-FMq"/>
+                            <constraint firstItem="Jvd-jY-L4g" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="l7g-cz-ADt"/>
+                            <constraint firstItem="Jvd-jY-L4g" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lga-iy-WQE"/>
+                            <constraint firstItem="Jvd-jY-L4g" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="nTt-JE-OQK"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="txD-27-phl"/>
                     <connections>
@@ -84,29 +89,63 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Stop the trip">
                                     <fontDescription key="titleFontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="40"/>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="baseBackgroundColor" systemColor="systemPinkColor"/>
+                                    <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="stopTrip:" destination="Zql-MY-rSe" eventType="touchUpInside" id="ca8-OW-fc8"/>
                                 </connections>
                             </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V0A-vS-nsy">
+                                <rect key="frame" x="5" y="44" width="404" height="342"/>
+                            </mapView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nsz-xn-y6d">
+                                <rect key="frame" x="50" y="738" width="314" height="4"/>
+                                <color key="tintColor" systemColor="systemRedColor"/>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speed:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6t1-zz-caF">
+                                <rect key="frame" x="50" y="653.5" width="90" height="34.5"/>
+                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n7M-b8-9o4">
+                                <rect key="frame" x="160" y="653" width="19" height="35"/>
+                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gTF-nT-6t3"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                        <color key="tintColor" systemColor="systemGreenColor"/>
                         <constraints>
                             <constraint firstItem="gTF-nT-6t3" firstAttribute="trailing" secondItem="qTU-xz-Q1T" secondAttribute="trailing" constant="100" id="3Vj-Im-UPQ"/>
                             <constraint firstItem="gTF-nT-6t3" firstAttribute="bottom" secondItem="qTU-xz-Q1T" secondAttribute="bottom" constant="270" id="66L-yU-rI3"/>
+                            <constraint firstItem="6t1-zz-caF" firstAttribute="leading" secondItem="gTF-nT-6t3" secondAttribute="leading" constant="50" id="6JN-GN-XeJ"/>
+                            <constraint firstItem="cDM-Vx-UK0" firstAttribute="top" secondItem="nsz-xn-y6d" secondAttribute="bottom" constant="40" id="7kP-vV-mjW"/>
                             <constraint firstItem="gTF-nT-6t3" firstAttribute="trailing" secondItem="cDM-Vx-UK0" secondAttribute="trailing" id="DAC-Tu-YCe"/>
                             <constraint firstItem="qTU-xz-Q1T" firstAttribute="leading" secondItem="gTF-nT-6t3" secondAttribute="leading" constant="100" id="J70-pr-8gE"/>
                             <constraint firstItem="6c8-2c-aNO" firstAttribute="leading" secondItem="gTF-nT-6t3" secondAttribute="leading" constant="10" id="Lrt-tv-sOe"/>
                             <constraint firstItem="cDM-Vx-UK0" firstAttribute="leading" secondItem="gTF-nT-6t3" secondAttribute="leading" id="NiU-Gf-jgN"/>
+                            <constraint firstItem="V0A-vS-nsy" firstAttribute="top" secondItem="gTF-nT-6t3" secondAttribute="top" id="RwY-4J-mlT"/>
+                            <constraint firstItem="gTF-nT-6t3" firstAttribute="trailing" secondItem="V0A-vS-nsy" secondAttribute="trailing" constant="5" id="UL9-Rz-x9e"/>
                             <constraint firstItem="gTF-nT-6t3" firstAttribute="trailing" secondItem="6c8-2c-aNO" secondAttribute="trailing" constant="10" id="VZc-N7-dpW"/>
+                            <constraint firstItem="6c8-2c-aNO" firstAttribute="top" secondItem="V0A-vS-nsy" secondAttribute="bottom" constant="50" id="Vkg-ob-4jo"/>
+                            <constraint firstItem="nsz-xn-y6d" firstAttribute="top" secondItem="n7M-b8-9o4" secondAttribute="bottom" constant="50" id="aaS-AM-ihj"/>
                             <constraint firstItem="cDM-Vx-UK0" firstAttribute="bottom" secondItem="gTF-nT-6t3" secondAttribute="bottom" id="deA-96-B1H"/>
+                            <constraint firstItem="gTF-nT-6t3" firstAttribute="trailing" secondItem="nsz-xn-y6d" secondAttribute="trailing" constant="50" id="mzt-nI-Io1"/>
+                            <constraint firstItem="n7M-b8-9o4" firstAttribute="leading" secondItem="6t1-zz-caF" secondAttribute="trailing" constant="20" id="ndw-Vs-TBJ"/>
+                            <constraint firstItem="V0A-vS-nsy" firstAttribute="leading" secondItem="gTF-nT-6t3" secondAttribute="leading" constant="5" id="nn8-iG-DEB"/>
+                            <constraint firstItem="nsz-xn-y6d" firstAttribute="top" secondItem="6t1-zz-caF" secondAttribute="bottom" constant="50" id="pTV-Yq-5oT"/>
                             <constraint firstItem="qTU-xz-Q1T" firstAttribute="top" secondItem="6c8-2c-aNO" secondAttribute="bottom" constant="11" id="rbt-sd-7zc"/>
+                            <constraint firstItem="nsz-xn-y6d" firstAttribute="leading" secondItem="gTF-nT-6t3" secondAttribute="leading" constant="50" id="x7I-Nq-jna"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Mqb-Zf-Cyi"/>
                     <connections>
+                        <outlet property="charge" destination="nsz-xn-y6d" id="TrC-Mn-J38"/>
+                        <outlet property="map" destination="V0A-vS-nsy" id="a4s-Aa-Xdx"/>
+                        <outlet property="speed" destination="n7M-b8-9o4" id="SUM-Qr-9uQ"/>
                         <outlet property="timerLabel" destination="qTU-xz-Q1T" id="GX5-LG-7vj"/>
                     </connections>
                 </viewController>
@@ -116,11 +155,17 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
     
-    let clocationmanager = CLLocationManager()
+    let locationManager = CLLocationManager()
     
     func sheetPrepare() {
         shuttleVC = shuttleBoard.instantiateViewController(identifier: "myVCID") as! MyViewController
@@ -40,25 +40,32 @@ class ViewController: UIViewController {
     }
 
 
-    func checkLocationServises(_ mapView: MKMapView) {
+    func checkLocationServises(_ map: MKMapView) {
         if CLLocationManager.locationServicesEnabled() {
-            checkLocationAuth(mapView)
-            clocationmanager.desiredAccuracy = kCLLocationAccuracyBest
-            clocationmanager.distanceFilter = kCLHeadingFilterNone
-            clocationmanager.startUpdatingLocation()
-            let location = clocationmanager.location?.coordinate
+            self.locationManager.requestAlwaysAuthorization()
+            self.locationManager.requestWhenInUseAuthorization()
+            
+            if CLLocationManager.locationServicesEnabled() {
+                locationManager.delegate = self
+                locationManager.desiredAccuracy = kCLLocationAccuracyBest
+                locationManager.startUpdatingLocation()
+            }
+            map.delegate = self
+            if let coor = map.userLocation.location?.coordinate {
+                map.setCenter(coor, animated: true)
+            }
             mapView.addAnnotations(ShuttleData.carArray)
-            let viewRegion = MKCoordinateRegion(center: location!, latitudinalMeters: 300, longitudinalMeters: 300)
-            mapView.setRegion(viewRegion, animated: true)
         }
     }
+    
+    
     
     func checkLocationAuth(_ mapView: MKMapView) {
         switch CLLocationManager.authorizationStatus() {
         case .authorizedWhenInUse:
             mapView.showsUserLocation = true
         case .notDetermined:
-            clocationmanager.requestWhenInUseAuthorization()
+            locationManager.requestWhenInUseAuthorization()
             mapView.showsUserLocation = true
         case .restricted:
             break
@@ -73,6 +80,18 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: MKMapViewDelegate, CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
+        mapView.mapType = MKMapType.standard
+        print(locValue)
+        
+        let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+        let region = MKCoordinateRegion(center: locValue, span: span)
+        mapView.setRegion(region, animated: true)
+        
+    }
+    
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
 
         let Identifier = "annotation"
@@ -86,6 +105,7 @@ extension ViewController: MKMapViewDelegate, CLLocationManagerDelegate {
             annotationView.frame.size = CGSize(width: 70, height: 70)
             return annotationView
         } else {
+            annotationView.isSelected = false
             return nil
         }
     }

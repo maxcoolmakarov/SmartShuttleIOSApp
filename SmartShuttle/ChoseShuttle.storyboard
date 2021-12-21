@@ -61,13 +61,14 @@
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5uw-uG-sI3">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="447"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" name="NotoNastaliqUrdu-Bold" family="Noto Nastaliq Urdu" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <color key="tintColor" systemColor="opaqueSeparatorColor"/>
                                 <constraints>
                                     <constraint firstItem="5uw-uG-sI3" firstAttribute="top" secondItem="YM7-rX-U6A" secondAttribute="top" id="DgM-hx-hm4"/>
                                     <constraint firstAttribute="trailing" secondItem="5uw-uG-sI3" secondAttribute="trailing" id="T11-8F-U1K"/>
@@ -75,10 +76,21 @@
                                     <constraint firstItem="5uw-uG-sI3" firstAttribute="leading" secondItem="YM7-rX-U6A" secondAttribute="leading" id="vcL-QP-vfF"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rub" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FVX-od-rwK">
+                                <rect key="frame" x="160.5" y="709" width="44" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="Xmm-Pl-T3d"/>
+                                    <constraint firstAttribute="height" constant="30" id="xSb-bR-6CX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                         <constraints>
+                            <constraint firstItem="Txd-uS-Ct2" firstAttribute="top" secondItem="FVX-od-rwK" secondAttribute="bottom" constant="20" id="EuK-nM-8W9"/>
                             <constraint firstItem="Fkp-8O-oMA" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="Gv7-MB-b2z"/>
                             <constraint firstItem="Txd-uS-Ct2" firstAttribute="top" secondItem="dhw-Jf-acv" secondAttribute="bottom" constant="20" id="Ia1-yR-jvC"/>
                             <constraint firstItem="Fkp-8O-oMA" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="JBM-Hu-7YV"/>
@@ -90,6 +102,7 @@
                             <constraint firstItem="ZeY-Qf-qRQ" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="bI8-Pq-WD7"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Fkp-8O-oMA" secondAttribute="trailing" constant="30" id="dM1-cq-tiM"/>
                             <constraint firstItem="Txd-uS-Ct2" firstAttribute="top" secondItem="X2M-UT-ls8" secondAttribute="bottom" constant="20" id="eds-DF-LYd"/>
+                            <constraint firstItem="FVX-od-rwK" firstAttribute="leading" secondItem="X2M-UT-ls8" secondAttribute="trailing" constant="35" id="jU5-z7-pEy"/>
                             <constraint firstItem="YM7-rX-U6A" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="nhC-of-Dh1"/>
                             <constraint firstItem="X2M-UT-ls8" firstAttribute="leading" secondItem="dhw-Jf-acv" secondAttribute="trailing" constant="20" id="qUF-cq-cLp"/>
                             <constraint firstItem="dhw-Jf-acv" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="vtY-Gb-U9v"/>
@@ -117,8 +130,8 @@
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

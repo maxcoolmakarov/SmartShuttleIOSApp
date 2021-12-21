@@ -18,26 +18,22 @@ class MyViewController: UIViewController, UISheetPresentationControllerDelegate 
     
     var opened = false
     var pic =  UIImage(named: "SShuttle")
+    var pricePerHour = 0.0
+    
     
     let mainBoard = UIStoryboard(name: "Main", bundle: nil)
-//    var mainVC = ViewController()
-//    var surveyVC = SurveyViewController()
     
     @IBOutlet var price: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         ChargeBar.transform = ChargeBar.transform.scaledBy(x: 1, y: 3)
+        ChargeBar.setProgress(1, animated: true)
         shuttleDescription.isEditable = false
         shuttleDescription.isSelectable = false
         opened = true
         picture.image = pic
         modelDetails.isHidden = true
-        
-//        let mainBoard = UIStoryboard(name: "Main", bundle: nil)
-//        mainVC = mainBoard.instantiateViewController(identifier: "mainID") as! ViewController
-//        surveyVC = mainBoard.instantiateViewController(identifier: "surveyID") as! SurveyViewController
-        
         print("Did load")
     }
     
@@ -51,7 +47,9 @@ class MyViewController: UIViewController, UISheetPresentationControllerDelegate 
     
     func setData(_ shuttle: Shuttle){
         price.text = String(shuttle.price)
-        ChargeBar.progress = shuttle.charge/100
+        pricePerHour = shuttle.price
+        ChargeBar.progressTintColor = UIProgressView.getButteryColour(progress: shuttle.charge/100)
+        ChargeBar.setProgress(shuttle.charge/100, animated: true)
         if shuttle.title == "SShuttle" {
             print("shuttle")
             picture.image = UIImage(named: "SShuttle")
@@ -67,7 +65,7 @@ class MyViewController: UIViewController, UISheetPresentationControllerDelegate 
         print("rent me")
         let mainBoard = UIStoryboard(name: "Main", bundle: nil)
         let surveyVC = mainBoard.instantiateViewController(identifier: "surveyID") as! SurveyViewController
-        
+        surveyVC.price = pricePerHour
         self.dismiss(animated: true, completion: nil)
         presentingViewController?.show(surveyVC, sender: nil)
     }
@@ -81,3 +79,16 @@ class MyViewController: UIViewController, UISheetPresentationControllerDelegate 
         }
     }
 }
+
+extension UIProgressView {
+    static func getButteryColour(progress: Float) -> UIColor{
+        if progress < 0.2 {
+            return UIColor.red
+        } else if progress < 0.6 {
+            return UIColor.yellow
+        } else {
+            return UIColor.systemGreen
+        }
+    }
+}
+

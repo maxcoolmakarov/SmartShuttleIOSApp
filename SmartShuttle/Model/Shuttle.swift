@@ -32,9 +32,9 @@ class Shuttle: NSObject, MKAnnotation {
 }
 
 struct ShuttleData {
-    static var carArray: [Shuttle] = [.init(id: 1, title: "SShuttle", charge: 75, price: 167.4, coordinate: CLLocationCoordinate2D(latitude: 37.785834, longitude: -122.407517)),
-                                      .init(id: 2, title: "SShuttle", charge: 37, price: 160.9, coordinate: CLLocationCoordinate2D(latitude: 37.786834, longitude: -122.405517)),
-                                      .init(id: 3, title: "Busik", charge: 69, price: 201.6, coordinate: CLLocationCoordinate2D(latitude: 37.783834, longitude: -122.406017))
+    static var carArray: [Shuttle] = [.init(id: 1, title: "SShuttle", charge: 75, price: 167.4, coordinate: CLLocationCoordinate2D(latitude: 55.756786, longitude: 37.617633)),
+                                      .init(id: 2, title: "SShuttle", charge: 37, price: 160.9, coordinate: CLLocationCoordinate2D(latitude: 55.755786, longitude: 37.614633)),
+                                      .init(id: 3, title: "Busik", charge: 8, price: 201.6, coordinate: CLLocationCoordinate2D(latitude: 55.758786, longitude: 37.615633))
     ]
     
 }
